@@ -1,0 +1,34 @@
+{
+    "name": "Universal",
+    "slug": "Universal",
+    "author": "Eywek",
+    "version": "1.0.0",
+    "apiID": 2,
+    "configurations": {
+      "favicon_url": "",
+      "theme": "default",
+      "homepage.features": [
+        {
+          "title": "Mon titre",
+          "icon": "user",
+          "message": "Mon super message"
+        },
+        {
+          "title": "Mon titre 2",
+          "icon": "cog",
+          "message": "Mon super message 2"
+        },
+        {
+          "title": "Mon titre 3",
+          "icon": "sign-out",
+          "message": "Mon super message 3"
+        }
+      ]
+    },
+    "supported": {
+      "eywek.shop.1": "0.4.0",
+      "eywek.support.2": "0.2.0",
+      "eywek.vote.3": "0.7.0",
+      "eywek.factionranking.4": "0.2.1"
+    }
+}
