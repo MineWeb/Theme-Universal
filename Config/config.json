@@ -24,7 +24,7 @@
                 "message": "Mon super message 3"
             }
         ],
-        "logo": false
+        "logo": "\/PEC\/MineWeb\/www\/img\/uploads\/theme_logo.png"
     },
     "supported": {
         "eywek.shop.1": "0.4.0",

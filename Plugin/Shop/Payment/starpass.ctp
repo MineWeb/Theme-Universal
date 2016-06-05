@@ -18,6 +18,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
+        <?= $this->element('flash') ?>
         <div class="alert alert-info text-center">1 code = <?= $money ?> <?= $Configuration->getMoneyName() ?></div>
 
          <div id="starpass_<?= $idd ?>"></div>

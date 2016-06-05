@@ -6,7 +6,7 @@
       <div class="box">
 
         <h3><?= $Lang->get('ERROR__500_LABEL') ?></h3>
-        <h4 class="text-muted"><?= $Lang->get('ERROR__500_CONTENT') ?></h4>
+        <h4 class="text-muted"><?= $Lang->get('ERROR__INTERNAL_ERROR') ?></h4>
 
         <p class="buttons"><a href="<?= $this->Html->url('/') ?>" class="btn btn-template-main"><i class="fa fa-home"></i> <?= $Lang->get('GLOBAL__HOME') ?></a></p>
 

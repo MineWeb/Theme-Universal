@@ -18,6 +18,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
+        <?= $this->element('flash') ?>
         <div data-dedipass="<?= $dedipassPublicKey ?>">
           <div class="alert alert-info"><?= $Lang->get('GLOBAL__LOADING') ?>...</div>
         </div>

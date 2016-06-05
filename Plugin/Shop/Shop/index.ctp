@@ -24,6 +24,7 @@
 </div>
 <div id="content">
   <div class="container">
+    <?= $this->element('flash') ?>
     <?= $vouchers->get_vouchers() // Les promotions en cours ?>
     <div class="row">
       <div class="col-sm-3">

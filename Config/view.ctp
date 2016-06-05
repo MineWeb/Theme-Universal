@@ -2,9 +2,10 @@
 $form_input = array('title' => $Lang->get('THEME__UPLOAD_LOGO'));
 
 if(isset($config['logo']) && $config['logo']) {
-  $logo = explode('/', $config['logo']);
-  $form_input['img'] = 'uploads/'.end($logo);
-  $form_input['filename'] = 'theme_logo';
+  //$logo = explode('/', $config['logo']);
+  //$form_input['img'] = '/img/uploads/theme_logo.png';
+  $form_input['img'] = $config['logo'];
+  $form_input['filename'] = 'theme_logo.png';
 }
 ?>
 <section class="content">

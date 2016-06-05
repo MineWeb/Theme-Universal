@@ -7,7 +7,8 @@
         <a class="navbar-brand home" href="index.html">
           <?php
           if(isset($theme_config['logo']) && $theme_config['logo']) {
-            echo $this->Html->image($theme_config['logo']);
+            //echo $this->Html->image($theme_config['logo']);
+            echo '<img src="'.$theme_config['logo'].'">';
           } else {
             echo '<p>'.$website_name.'</p>';
           }
