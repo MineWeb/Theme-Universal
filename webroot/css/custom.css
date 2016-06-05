@@ -50,3 +50,12 @@ footer {
 .navbar-affixed-top .navbar-collapse {
   max-height: 100%;
 }
+
+
+.btn-template-main.transparent:not(:hover) {
+  background: transparent;
+}
+
+.btn-template-main {
+  outline:none;
+}

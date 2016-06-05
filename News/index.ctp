@@ -27,7 +27,7 @@
         </div>
 
 
-        <button id="<?= $news['News']['id'] ?>" type="button" class="btn btn-primary pull-right like<?= ($news['News']['liked']) ? ' active' : '' ?>"<?= (!$Permissions->can('LIKE_NEWS')) ? ' disabled' : '' ?>><?= $news['News']['count_likes'] ?> <i class="fa fa-thumbs-up"></i></button><br>
+        <button id="<?= $news['News']['id'] ?>" type="button" class="btn btn-template-main pull-right like<?= ($news['News']['liked']) ? ' active' : '' ?>"<?= (!$Permissions->can('LIKE_NEWS')) ? ' disabled' : '' ?>><?= $news['News']['count_likes'] ?> <i class="fa fa-thumbs-up"></i></button><br>
 
         <div id="comments">
           <h4 class="text-uppercase"><?= count($news['Comment']).' '.$Lang->get('NEWS__COMMENTS_TITLE') ?></h4>
