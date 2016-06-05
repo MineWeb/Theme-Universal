@@ -59,7 +59,7 @@
     <div class="container">
         <div class="col-md-12">
           <?php
-          $features = $theme_config['homepage.features'];
+          $features = $theme_config['homepage_features'];
           if(!empty($features)) {
 
             $featuresChunked = array_chunk($features, 3);
