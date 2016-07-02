@@ -20,6 +20,8 @@
 
 	  <?= $this->Html->script('jquery-1.11.0.js') ?>
 
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
     <link rel="icon" type="image/png" href="<?= $theme_config['favicon_url'] ?>" />
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -63,7 +65,64 @@
   <?= $this->Html->script('bootstrap.js') ?>
   <?= $this->Html->script('app.js') ?>
   <?= $this->Html->script('form.js') ?>
+  <?= $this->Html->script('notification.js') ?>
   <script>
+  <?php if($isConnected) { ?>
+    // Notifications
+    var notification = new $.Notification({
+      'notification_type': 'user',
+      'limit': 5,
+      'url': {
+        'get': '<?= $this->Html->url(array('plugin' => false, 'admin' => false, 'controller' => 'notifications', 'action' => 'getAll')) ?>',
+        'clear': '<?= $this->Html->url(array('plugin' => false, 'admin' => false, 'controller' => 'notifications', 'action' => 'clear', 'NOTIF_ID')) ?>',
+        'clearAll': '<?= $this->Html->url(array('plugin' => false, 'admin' => false, 'controller' => 'notifications', 'action' => 'clearAll')) ?>',
+        'markAsSeen': '<?= $this->Html->url(array('plugin' => false, 'admin' => false, 'controller' => 'notifications', 'action' => 'markAsSeen', 'NOTIF_ID')) ?>',
+        'markAllAsSeen': '<?= $this->Html->url(array('plugin' => false, 'admin' => false, 'controller' => 'notifications', 'action' => 'markAllAsSeen')) ?>'
+      },
+      'messages': {
+        'markAsSeen': '<?= $Lang->get('NOTIFICATION__MARK_AS_SEEN') ?>',
+        'notifiedBy': '<?= $Lang->get('NOTIFICATION__NOTIFIED_BY') ?>'
+      },
+      'indicator': {
+        'element': '#notification-indicator',
+        'class': 'label label-warning',
+        'style': {},
+        'defaultContent': '<i class="fa fa-bell-o"></i>'
+      },
+      'list': {
+        'element': '#notification-container',
+        'container': {
+          'type': '',
+          'class': '',
+          'style': ''
+        },
+        'notification': {
+          'type': 'li',
+          'class': '',
+          'style': 'list-style-type: none;border-bottom: solid 1px #eeeeee;text-transform: uppercase;letter-spacing: 0.08em;padding: 4px 0;',
+          'content':'<a href="#" style="color: #999999;font-size: 12px;">{CONTENT}</a>',
+          'from': {
+            'type': '',
+            'class': '',
+            'style': '',
+            'content': ''
+          },
+          'seen': {
+            'element': {
+              'style': '',
+              'class': ''
+            },
+            'btn': {
+              'element': '.mark-as-seen',
+              'style': '',
+              'class': 'hidden',
+              'attr': [{'onclick': ''}],
+            }
+          }
+        }
+      }
+    });
+  <?php } ?>
   // Config FORM/APP.JS
 
   var LIKE_URL = "<?= $this->Html->url(array('controller' => 'news', 'action' => 'like')) ?>";

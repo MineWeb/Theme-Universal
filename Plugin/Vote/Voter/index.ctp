@@ -212,79 +212,75 @@
   </section>
 </div>
 
-<?php if($Permissions->can('VOTE_SHOW_REWARDS')) { ?>
-	<div class="modal fade" id="rewards" tabindex="-1" role="dialog" aria-labelledby="rewardsLabel" aria-hidden="false">
-		<div class="modal-dialog">
-				<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="<?= $Lang->get('GLOBAL__CLOSE') ?>"><span aria-hidden="true">×</span></button>
-							<h4 class="modal-title" id="myModalLabel"><?= $Lang->get('VOTE__REWARDS_TITLE') ?></h4>
-						</div>
-						<div class="modal-body">
-							<table class="table table-striped">
-									<thead>
-										<tr>
-												<th>Nom</th>
-												<th><?= $Lang->get('VOTE__CONFIG_REWARD_PROBABILITY') ?></th>
-										</tr>
-									</thead>
-									<tbody>
+<div class="modal fade" id="rewards" tabindex="-1" role="dialog" aria-labelledby="rewardsLabel" aria-hidden="false">
+	<div class="modal-dialog">
+			<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="<?= $Lang->get('GLOBAL__CLOSE') ?>"><span aria-hidden="true">×</span></button>
+						<h4 class="modal-title" id="myModalLabel"><?= $Lang->get('VOTE__REWARDS_TITLE') ?></h4>
+					</div>
+					<div class="modal-body">
+						<table class="table table-striped">
+								<thead>
+									<tr>
+											<th>Nom</th>
+											<th><?= $Lang->get('VOTE__CONFIG_REWARD_PROBABILITY') ?></th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php
+										foreach ($rewards as $key => $value) {
+											echo '<tr>';
+												echo '<td>';
+													echo ($value['type'] == "money") ? $value['how'].' '.$Configuration->getMoneyName() : $value['name'];
+												echo '</td>';
+												echo '<td>'.$value['proba'].'%</td>';
+											echo '</tr>';
+										}
+									?>
+							</tbody>
+						</table>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal"><?= $Lang->get('GLOBAL__CLOSE') ?></button>
+				</div>
+			</div>
+		</div>
+</div>
+<div class="modal fade" id="ranking" tabindex="-1" role="dialog" aria-labelledby="rankingLabel" aria-hidden="false">
+	<div class="modal-dialog">
+			<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="<?= $Lang->get('GLOBAL__CLOSE') ?>"><span aria-hidden="true">×</span></button>
+						<h4 class="modal-title" id="myModalLabel"><?= $Lang->get('VOTE__RANKING_TITLE') ?></h4>
+					</div>
+					<div class="modal-body">
+						<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>#</th>
+											<th>Nom</th>
+											<th>Nbr. vote</th>
+									</tr>
+								</thead>
+								<tbody>
 										<?php
-											foreach ($rewards as $key => $value) {
-												echo '<tr>';
-													echo '<td>';
-														echo ($value['type'] == "money") ? $value['how'].' '.$Configuration->getMoneyName() : $value['name'];
-													echo '</td>';
-													echo '<td>'.$value['proba'].'%</td>';
-												echo '</tr>';
-											}
+										$i = 0;
+										foreach ($ranking as $key => $value) {
+										$i++;
 										?>
-								</tbody>
-							</table>
+											<tr>
+												<td><?= $i ?></td>
+												<td><?= $value['User']['pseudo'] ?></td>
+												<td><?= $value['User']['vote'] ?></td>
+											</tr>
+						<?php } ?>
+					</tbody>
+						</table>
 						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal"><?= $Lang->get('GLOBAL__CLOSE') ?></button>
-					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal"><?= $Lang->get('GLOBAL__CLOSE') ?></button>
 				</div>
 			</div>
-	</div>
-<?php } ?>
-<?php if($Permissions->can('VOTE_SHOW_RANKING')) { ?>
-	<div class="modal fade" id="ranking" tabindex="-1" role="dialog" aria-labelledby="rankingLabel" aria-hidden="false">
-		<div class="modal-dialog">
-				<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="<?= $Lang->get('GLOBAL__CLOSE') ?>"><span aria-hidden="true">×</span></button>
-							<h4 class="modal-title" id="myModalLabel"><?= $Lang->get('VOTE__RANKING_TITLE') ?></h4>
-						</div>
-						<div class="modal-body">
-							<table class="table table-striped">
-									<thead>
-										<tr>
-											<th>#</th>
-												<th>Nom</th>
-												<th>Nbr. vote</th>
-										</tr>
-									</thead>
-									<tbody>
-											<?php
-											$i = 0;
-											foreach ($ranking as $key => $value) {
-											$i++;
-											?>
-												<tr>
-													<td><?= $i ?></td>
-													<td><?= $value['User']['pseudo'] ?></td>
-													<td><?= $value['User']['vote'] ?></td>
-												</tr>
-							<?php } ?>
-						</tbody>
-							</table>
-							</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal"><?= $Lang->get('GLOBAL__CLOSE') ?></button>
-					</div>
-				</div>
-			</div>
-	</div>
-<?php } ?>
+		</div>
+</div>

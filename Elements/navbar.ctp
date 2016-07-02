@@ -4,7 +4,7 @@
     <div class="container">
       <div class="navbar-header">
 
-        <a class="navbar-brand home" href="index.html">
+        <a class="navbar-brand home" href="<?= $this->Html->url('/') ?>">
           <?php
           if(isset($theme_config['logo']) && $theme_config['logo']) {
             //echo $this->Html->image($theme_config['logo']);

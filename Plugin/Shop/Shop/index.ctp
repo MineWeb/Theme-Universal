@@ -81,7 +81,7 @@
                   echo '<div class="image">';
                     echo '<a href="#" class="display-item" data-item-id="'.$item['id'].'">';
                       $url = (isset($item['img_url']) && !empty($item['img_url'])) ? $item['img_url'] : 'product_img_default.png';
-                      echo $this->Html->image($url, array('class' => 'img-responsive image1'));
+                      echo $this->Html->image($url, array('class' => 'img-responsive image1', 'width' => '450', 'height' => '450'));
                     echo '</a>';
                   echo '</div>';
 
