@@ -12,7 +12,7 @@
         <?php
           foreach ($search_slider as $k => $v) {
 
-            echo '<div class="item" style="background-image:url('.$v['Slider']['url_img'].');-webkit-background-size: cover;background-size: cover;">';
+            echo '<div class="item" style="background-image:url('.$v['Slider']['url_img'].');">';
               echo '<div class="container">';
                 echo '<div class="row">';
                   echo '<div class="col-sm-5" style="margin-top: 10%;">';
