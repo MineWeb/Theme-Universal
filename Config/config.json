@@ -27,9 +27,9 @@
         "logo": false
     },
     "supported": {
-        "eywek.shop.1": "0.4.0",
-        "eywek.support.2": "0.2.0",
-        "eywek.vote.3": "0.7.0",
-        "eywek.factionranking.4": "0.2.1"
+        "eywek.shop.1": "^1.0.0",
+        "eywek.support.2": "^0.3.0",
+        "eywek.vote.3": "^2.0.0",
+        "eywek.factionranking.4": "^1.0.0"
     }
 }
