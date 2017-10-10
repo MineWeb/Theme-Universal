@@ -2,7 +2,7 @@
     "name": "Universal",
     "slug": "Universal",
     "author": "Eywek",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "apiID": 3,
     "slider": true,
     "configurations": {
@@ -29,9 +29,8 @@
     },
     "supported": {
         "CMS": "^1.2.0",
-        "eywek.shop.1": "^1.0.0",
-        "eywek.support.2": "^1.2.0",
-        "eywek.vote.3": "^2.0.0",
-        "eywek.factionranking.4": "^1.0.0"
+        "eywek.shop.1": "^1.1.0",
+        "eywek.support.2": "^1.0.2",
+        "eywek.vote.3": "^2.0.0"
     }
 }
